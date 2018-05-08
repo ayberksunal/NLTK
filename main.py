@@ -95,15 +95,30 @@ def findWords(tagList, tag, num=15):
 
     common_tag_list = []
     if tag == 'noun':
-        common_tag_list = [ tag_[0] for tag_ in tagList if tag_[1] == 'NN' or tag_[1] == 'NNS' or tag_[1] == 'NNP']
+        common_tag_list = [ tag_[0] for tag_ in tagList 
+                           if tag_[1] == 'NN' or 
+                           tag_[1] == 'NNS' or 
+                           tag_[1] == 'NNP']
     elif tag == 'verb':
-        common_tag_list = [ tag_[0] for tag_ in tagList if tag_[1] == 'VB' or tag_[1] == 'VBD' or tag_[1] == 'VBN']
+        common_tag_list = [ tag_[0] for tag_ in tagList 
+                           if tag_[1] == 'VB' or
+                           tag_[1] == 'VBD' or
+                           tag_[1] == 'VBN']
     elif tag == 'adverb':
-        common_tag_list = [tag_[0] for tag_ in tagList if tag_[1] == 'VB' or tag_[1] == 'VBD' or tag_[1] == 'VBN']
+        common_tag_list = [tag_[0] for tag_ in tagList 
+                           if tag_[1] == 'VB' or
+                           tag_[1] == 'VBD' or
+                           tag_[1] == 'VBN']
     elif tag == 'adjective':
-        common_tag_list = [tag_[0] for tag_ in tagList if tag_[1] == 'JJR' or tag_[1] == 'JJ' or tag_[1] == 'JJS']
+        common_tag_list = [tag_[0] for tag_ in tagList 
+                           if tag_[1] == 'JJR' or
+                           tag_[1] == 'JJ' or
+                           tag_[1] == 'JJS']
     elif tag == 'pronoun':
-        common_tag_list = [tag_[0] for tag_ in tagList if tag_[1] == 'WP' or tag_[1] == 'PRP' or tag_[1] == 'PRP$']
+        common_tag_list = [tag_[0] for tag_ in tagList if
+                           tag_[1] == 'WP' or
+                           tag_[1] == 'PRP' or
+                           tag_[1] == 'PRP$']
 
     result = FreqDist(common_tag_list)
     result = result.most_common(num)
